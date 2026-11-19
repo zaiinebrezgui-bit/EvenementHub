@@ -1,0 +1,9 @@
+<section class="liste-evenements">
+  @for (e of evenements; track e.id) { <!--track e.id : l'identifiant est unique, Angular s'en sert pour savoir quelle carte correspond à quel événement-->
+    <article class="carte-evenement">
+      <h2>{{ e.titre }}</h2>
+      <p>{{ e.club }} · {{ e.lieu }}</p>
+      <p>Places : {{ e.placesReservees }} / {{ e.capacite }}</p>
+    </article>
+  }
+</section>
