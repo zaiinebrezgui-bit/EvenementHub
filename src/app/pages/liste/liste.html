@@ -1,9 +1,12 @@
+<!--section qui contient toutes les cartes des événements-->
 <section class="liste-evenements">
-  @for (e of evenements; track e.id) { <!--track e.id : l'identifiant est unique, Angular s'en sert pour savoir quelle carte correspond à quel événement-->
-    <article class="carte-evenement">
-      <h2>{{ e.titre }}</h2>
-      <p>{{ e.club }} · {{ e.lieu }}</p>
-      <p>Places : {{ e.placesReservees }} / {{ e.capacite }}</p>
-    </article>
-  }
+  <p class="favoris">Favoris : {{ favoris.length }}</p>
+  <div class="grille">
+    <!--@for permet de parcourir le tableau evenements-->
+    <!--e représente l'evenement actuel pendant le parcours-->
+    <!--track e.id permet à angular de connaitre chaque événement grace à son identifiant-->
+    @for (e of evenements; track e.id) { <!--track e.id : l'identifiant est unique, Angular s'en sert pour savoir quelle carte correspond à quel événement-->
+      <app-carte-evenement [evenement]="e" (favori)="ajouterFavori($event)" (selectionne)="selectionner($event)"></app-carte-evenement>
+    }
+  </div>
 </section>

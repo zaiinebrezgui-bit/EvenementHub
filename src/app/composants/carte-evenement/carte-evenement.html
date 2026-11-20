@@ -1,0 +1,36 @@
+<!-- vérifier si un événement existe -->
+@if (evenement) {
+  <!-- créer la carte et ajouter la classe termine si l'événement est terminé -->
+  <!--le property binding permet de transmettre une valeur de typescript vers le html-->
+  <!--[class.termine] est du property binding (angular, ajoute la classe css termine à cet article si la valeur de termine est true)-->
+  <article class="carte-evenement" [class.termine]="termine">
+    <!-- afficher le titre de l'événement -->
+    <h2>{{ evenement.titre }}</h2>
+    <!-- vérifier si l'événement est terminé -->
+    @if (termine) {
+      <!-- afficher le message Terminé -->
+      <p class="mention-termine">Terminé</p>
+    }
+    <!-- afficher le club et le lieu-->
+    <p>{{ evenement.club }} · {{ evenement.lieu }}</p>
+    <!-- afficher la catégorie-->
+    <p>Catégorie : {{ evenement.categorie }}</p>
+    <p>
+        <!-- vérifier si l'événement est gratuit -->
+        @if (evenement.gratuit) { 
+            Gratuit 
+        } 
+        @else { 
+            Payant 
+        }
+    </p>
+    <!-- afficher le nombre de places réservées et la capacité-->
+    <p>Places : {{ evenement.placesReservees }} / {{ evenement.capacite }}</p>
+    <!-- appeler la méthode ajouterFavori() lorsqu'on clique sur le bouton -->
+    <button (click)="ajouterFavori()">Ajouter aux favoris</button>
+    <!-- appeler la méthode voirDetail() lorsqu'on clique sur le bouton -->
+    <button (click)="voirDetail()">Voir le détail</button>
+    <!--l'event binding permet de réagir à une action de l'utilisateur(html → typescript)-->
+    <!--(click) est de l'event binding-->
+  </article>
+}

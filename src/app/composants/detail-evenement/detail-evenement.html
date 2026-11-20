@@ -1,0 +1,17 @@
+@if (evenement) {
+  <aside class="detail-evenement">
+    <h2>{{ evenement.titre }}</h2>
+    <p>{{ evenement.description }}</p>
+    <p>Club : {{ evenement.club }}</p>
+    <p>Lieu : {{ evenement.lieu }}</p>
+    <p>Catégorie : {{ evenement.categorie }}</p>
+    <p>Places réservées : {{ evenement.placesReservees }} / {{ evenement.capacite }}</p>
+    <div class="barre">
+      <div class="barre-remplie" [style.width.%]="taux"></div>
+    </div>
+  </aside>
+} @else {
+  <aside class="detail-evenement detail-evenement--vide">
+    <p>Sélectionnez un événement pour voir son détail.</p>
+  </aside>
+}

@@ -1,2 +1,19 @@
-.liste-evenements { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 24px; }
-.carte-evenement { border: 1px solid #dadae3; border-radius: 8px; padding: 12px 16px; }
+/*section qui contient toutes les cartes*/
+.liste-evenements {
+    display: grid;/*organiser les éléments en grille*/
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    /*Créer automatiquement des colonnes :
+    auto-fill : remplir l'espace disponible avec des colonnes
+    minmax(260px, 1fr) : chaque colonne a une largeur minimale de 260px
+    et peut s'agrandir pour occuper l'espace disponible
+    */
+    gap: 16px; /*espace entre les cartes*/
+    padding: 24px; /*espace interieur*/
+}
+/*carte évenement*/
+.carte-evenement { 
+    border: 1px solid #dadae3; 
+    border-radius: 8px; /*arrondir les coins de la carte*/
+    padding: 12px 16px; /*espace intérieur 12 en haut et en bas et 16 à gauche et à droite*/
+}
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
